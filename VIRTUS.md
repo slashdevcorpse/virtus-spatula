@@ -25,7 +25,7 @@ One line for each commit on `virtus` that is not in upstream:
    `<6`; the scraper process uses lxml 6.1.3) and the `shell` extra `ipython>=8.10.0,<10.0.0` (upstream `<8`). The
    package code is unchanged.
 2. `Release workflow: wheel, sdist and SHA256SUMS for v*+virtus.* tags`: `.github/workflows/virtus-release.yml`, and
-   the build backend pin `hatchling==1.33.0`.
+   the build backend pin `hatchling==1.27.0` (supports Python 3.8 and 3.9; 1.28.0 requires 3.10+).
 3. `VIRTUS.md`: this file.
 
 ## Release
