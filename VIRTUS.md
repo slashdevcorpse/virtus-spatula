@@ -12,6 +12,9 @@ virtualenv of the Open States bills ETL (B2). It replaces the copy `vendor/spatu
 ## Branches
 
 - `upstream-main` holds the upstream history: upstream `main` as it was when this fork got its history.
+- `main` must be equal to upstream `main`. Only a fast-forward from upstream moves it. This repo is a GitHub fork of
+  the old mirror, so `main` is the mirror's `6b48d857`. That commit is an ancestor of `upstream-main`, so a
+  fast-forward of `main` to `upstream-main` fixes it with no re-create.
 - `virtus` holds our patches as separate commits on top of an upstream commit.
 
 ## Patches
@@ -35,8 +38,8 @@ One line for each commit on `virtus` that is not in upstream:
 
 ## Sync with upstream
 
-1. Fast-forward `upstream-main` to upstream `main`:
-   `git fetch upstream && git push origin upstream/main:upstream-main`.
+1. Fast-forward `main` and `upstream-main` to upstream `main`:
+   `git fetch upstream && git push origin upstream/main:main upstream/main:upstream-main`.
 2. Merge the upstream release commit into `virtus` (never rebase `virtus`). Solve the conflicts in the patch commits.
 3. Update "Base" in this file. If the upstream version changes, set the `pyproject.toml` version to
    `<new upstream version>+virtus.1`.
