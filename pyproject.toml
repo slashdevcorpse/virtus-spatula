@@ -43,7 +43,7 @@ Repository = "https://codeberg.org/jpt/spatula/"
 Documentation = "https://jamesturk.github.io/spatula/"
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling==1.33.0"]
 build-backend = "hatchling.build"
 
 [tool.uv]
